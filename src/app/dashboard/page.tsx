@@ -14,7 +14,7 @@ const lists = [
 const navItems = [
   { icon: Home, label: 'Dashboard' },
   { icon: ShoppingCart, label: 'My Lists' },
-  { icon: Archive, label: 'Pantry', badge: 3 },
+  { icon: Archive, label: 'Pantry', badge: 3, href: '/pantry' },
   { icon: Star, label: 'Templates' },
   { icon: TrendingUp, label: 'Budget' },
   { icon: Settings, label: 'Settings' },
@@ -46,10 +46,10 @@ export default function DashboardPage() {
           <span style={{ fontWeight: 700, fontSize: '1.1rem', color: '#111827' }}>Smart Groceries</span>
         </div>
         <nav style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 4 }}>
-          {navItems.map(({ icon: Icon, label, badge }: { icon: typeof Home, label: string, badge?: number }) => {
+          {navItems.map(({ icon: Icon, label, badge, href }: { icon: typeof Home, label: string, badge?: number, href?: string }) => {
             const active = activeNav === label;
             return (
-              <button key={label} onClick={() => setActiveNav(label)} style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 12, padding: '10px 12px', borderRadius: 10, border: 'none', cursor: 'pointer', fontWeight: 500, fontSize: '0.9rem', background: active ? '#f0fdf4' : 'transparent', color: active ? '#16a34a' : '#6b7280', textAlign: 'left' }}>
+              <button key={label} onClick={() => href ? router.push(href) : setActiveNav(label)} style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 12, padding: '10px 12px', borderRadius: 10, border: 'none', cursor: 'pointer', fontWeight: 500, fontSize: '0.9rem', background: active ? '#f0fdf4' : 'transparent', color: active ? '#16a34a' : '#6b7280', textAlign: 'left' }}>
                 <Icon size={18} strokeWidth={active ? 2.5 : 1.8} />
                 {label}
                 {badge && <span style={{ marginLeft: 'auto', background: '#f97316', color: 'white', borderRadius: 99, padding: '2px 7px', fontSize: '0.7rem', fontWeight: 700 }}>{badge}</span>}
