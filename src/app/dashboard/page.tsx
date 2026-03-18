@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from 'react';
-import { ShoppingCart, Home, Archive, Settings, Plus, Bell, Search, Users, Clock, ChevronRight, LayoutGrid, Star, TrendingUp, Zap } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { ShoppingCart, Home, Archive, Settings, Plus, Bell, Search, Users, Clock, ChevronRight, LayoutGrid, Star, TrendingUp, Zap, LogOut } from 'lucide-react';
+import { createClient } from '@/lib/supabase/client';
 
 const lists = [
   { id: 1, name: 'Weekend Groceries', store: 'Rami Levy', items: 12, checked: 4, members: ['A', 'D', 'M'], updated: '1h ago', color: '#22c55e', budget: 320 },
@@ -23,6 +25,14 @@ const avatarColors: Record<string, string> = { A: '#3b82f6', D: '#a855f7', M: '#
 export default function DashboardPage() {
   const [activeNav, setActiveNav] = useState('Dashboard');
   const [search, setSearch] = useState('');
+  const router = useRouter();
+  const supabase = createClient();
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    router.push('/');
+  };
+
   const filtered = lists.filter((l) => l.name.toLowerCase().includes(search.toLowerCase()) || l.store.toLowerCase().includes(search.toLowerCase()));
 
   return (
@@ -48,9 +58,14 @@ export default function DashboardPage() {
             );
           })}
         </nav>
-        <div style={{ marginTop: 24, paddingTop: 16, borderTop: '1px solid #f3f4f6', display: 'flex', alignItems: 'center', gap: 12, padding: '16px 8px 0' }}>
-          <div style={{ width: 36, height: 36, borderRadius: '50%', background: '#3b82f6', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 700 }}>A</div>
-          <div><p style={{ fontSize: '0.875rem', fontWeight: 600, color: '#1f2937' }}>The Family</p><p style={{ fontSize: '0.75rem', color: '#9ca3af' }}>ada@example.com</p></div>
+        <div style={{ marginTop: 24, paddingTop: 16, borderTop: '1px solid #f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px 8px 0' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <div style={{ width: 36, height: 36, borderRadius: '50%', background: '#3b82f6', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 700 }}>A</div>
+            <div><p style={{ fontSize: '0.875rem', fontWeight: 600, color: '#1f2937' }}>The Family</p><p style={{ fontSize: '0.75rem', color: '#9ca3af' }}>ada@example.com</p></div>
+          </div>
+          <button onClick={handleLogout} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6b7280', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '8px', borderRadius: '8px' }} title="Log out">
+            <LogOut size={18} />
+          </button>
         </div>
       </aside>
 
