@@ -1,0 +1,50 @@
+
+> web@0.1.0 dev
+> next dev
+
+▲ Next.js 16.1.7 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+- Environments: .env.local
+
+✓ Starting...
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+✓ Ready in 2.1s
+ GET /pantry 200 in 833ms (compile: 332ms, proxy.ts: 141ms, render: 360ms)
+ GET /login 404 in 243ms (compile: 95ms, proxy.ts: 15ms, render: 133ms)
+ GET /login 404 in 112ms (compile: 23ms, proxy.ts: 9ms, render: 80ms)
+ GET / 200 in 1307ms (compile: 1156ms, proxy.ts: 12ms, render: 138ms)
+ GET /pantry 200 in 125ms (compile: 15ms, proxy.ts: 9ms, render: 101ms)
+ GET /login 404 in 73ms (compile: 15ms, proxy.ts: 11ms, render: 47ms)
+ GET /login 404 in 86ms (compile: 11ms, proxy.ts: 7ms, render: 68ms)
+ GET /pantry 200 in 66ms (compile: 8ms, proxy.ts: 7ms, render: 51ms)
+ GET /login 404 in 134ms (compile: 16ms, proxy.ts: 11ms, render: 107ms)
+ GET /login 404 in 89ms (compile: 15ms, proxy.ts: 10ms, render: 64ms)
+ GET /pantry 200 in 74ms (compile: 8ms, proxy.ts: 8ms, render: 58ms)
+ GET /login 404 in 56ms (compile: 13ms, proxy.ts: 8ms, render: 36ms)
+ GET /login 404 in 110ms (compile: 23ms, proxy.ts: 6ms, render: 82ms)
+ GET /pantry 200 in 65ms (compile: 6ms, proxy.ts: 9ms, render: 50ms)
+ GET /pantry 200 in 57ms (compile: 5ms, proxy.ts: 6ms, render: 45ms)
+ GET /pantry 200 in 68ms (compile: 6ms, proxy.ts: 6ms, render: 56ms)
+ GET /pantry 200 in 62ms (compile: 4ms, proxy.ts: 5ms, render: 53ms)
+ GET /pantry 200 in 62ms (compile: 5ms, proxy.ts: 7ms, render: 50ms)
+ GET /pantry 200 in 52ms (compile: 4ms, proxy.ts: 5ms, render: 43ms)
+ GET /pantry 200 in 55ms (compile: 6ms, proxy.ts: 6ms, render: 43ms)
+ GET /pantry 200 in 65ms (compile: 5ms, proxy.ts: 5ms, render: 55ms)
+ GET /pantry 200 in 61ms (compile: 5ms, proxy.ts: 10ms, render: 45ms)
+ GET /pantry 200 in 50ms (compile: 4ms, proxy.ts: 6ms, render: 40ms)
+ GET /pantry 200 in 54ms (compile: 6ms, proxy.ts: 6ms, render: 42ms)
+ GET /pantry 200 in 56ms (compile: 6ms, proxy.ts: 5ms, render: 46ms)
+ GET /pantry 200 in 76ms (compile: 4ms, proxy.ts: 7ms, render: 65ms)
+ GET /pantry 200 in 53ms (compile: 4ms, proxy.ts: 5ms, render: 44ms)
+ GET /pantry 200 in 54ms (compile: 7ms, proxy.ts: 6ms, render: 41ms)
+ GET /pantry 200 in 53ms (compile: 4ms, proxy.ts: 4ms, render: 44ms)
+ GET /pantry 200 in 49ms (compile: 4ms, proxy.ts: 4ms, render: 40ms)
+ GET /pantry 200 in 51ms (compile: 6ms, proxy.ts: 5ms, render: 40ms)
+ GET /pantry 200 in 49ms (compile: 6ms, proxy.ts: 4ms, render: 39ms)
+ GET /pantry 200 in 56ms (compile: 4ms, proxy.ts: 5ms, render: 46ms)
+ GET /pantry 200 in 49ms (compile: 6ms, proxy.ts: 5ms, render: 38ms)
+ GET /pantry 200 in 50ms (compile: 5ms, proxy.ts: 5ms, render: 40ms)
+ GET /pantry 200 in 67ms (compile: 5ms, proxy.ts: 7ms, render: 55ms)
+ GET /login 404 in 72ms (compile: 17ms, proxy.ts: 8ms, render: 47ms)
+ GET /login 404 in 103ms (compile: 12ms, proxy.ts: 6ms, render: 86ms)
